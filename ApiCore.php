@@ -13,7 +13,7 @@ final class ApiCore
      * @param array $app_path 业务路径
      * @param array $sdk_lib SDK路径
      */
-    public static function init($app_path, $sdk_lib = array('gdlApiSdk'))
+    public static function init($app_path, $sdk_lib = array('hlwApiSdk'))
     {
         self::$loader = new Class_Loader();
         self::$loader->appendPath('app', $app_path);

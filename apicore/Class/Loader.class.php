@@ -9,7 +9,7 @@ class Class_Loader
 
     private $rootPath = '';
     private $pluginPath = array();
-    private $gdlPath = array();
+    private $hlwPath = array();
     private $appPath = array();
     private $corePath = array();
     private $thriftPath = array();
@@ -20,13 +20,13 @@ class Class_Loader
     {
         $this->rootPath = realpath(__DIR__ . '/../../../');
 
-        $this->appendPath('gdl', array($this->rootPath . '/gdl_phpframe/gdlcore'));
+        $this->appendPath('hlw', array($this->rootPath . '/hlw_phpframe/hlwcore'));
 
-        $this->appendPath('plugin', array($this->rootPath . '/gdl_phpframe/plugins'));
+        $this->appendPath('plugin', array($this->rootPath . '/hlw_phpframe/plugins'));
 
-        $this->appendPath('core', array($this->rootPath . '/gdl_php/apicore'));
+        $this->appendPath('core', array($this->rootPath . '/hlw_php/apicore'));
 
-        $this->appendPath('thrift', array($this->rootPath . '/gdl_php/lib'));
+        $this->appendPath('thrift', array($this->rootPath . '/hlw_php/lib'));
     }
 
     public function appendPath($target, $path)
@@ -87,7 +87,7 @@ class Class_Loader
         if ($class{0} == 'S' && $this->loadFile('plugin', "{$class}.class.php", $class)) {
             return;
         }
-        if ($this->loadFile('gdl', str_replace('_', '/', substr($class, 4)) . '.class.php', $class)) {
+        if ($this->loadFile('hlw', str_replace('_', '/', substr($class, 4)) . '.class.php', $class)) {
             return;
         }
 

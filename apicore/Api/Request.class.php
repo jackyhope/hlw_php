@@ -8,11 +8,11 @@
  */
 class Api_Request 
 {
-    const APPID = 'GDL_APPID';
-    const SIGNATURE = 'GDL_SIGNATURE';
-    const TIMESTAMP = 'GDL_TIMESTAMP';
-    const SEQ = 'GDL_SEQ';
-    const DEBUG = 'GDL_DEBUG';
+    const APPID = 'HLW_APPID';
+    const SIGNATURE = 'HLW_SIGNATURE';
+    const TIMESTAMP = 'HLW_TIMESTAMP';
+    const SEQ = 'HLW_SEQ';
+    const DEBUG = 'HLW_DEBUG';
     const INVOKE_SERVICE = 'INVOKE_SERVICE';
     const INVOKE_SERVICE_PARAMETERS = 'INVOKE_SERVICE_PARAMETERS';
 

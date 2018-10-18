@@ -7,8 +7,8 @@
 class Api_Response 
 {
 
-    const CODE = 'GDL_CODE';
-    const SEQ = 'GDL_SEQ';
+    const CODE = 'HLW_CODE';
+    const SEQ = 'HLW_SEQ';
 
     private $headers = array();
     private $message = '';
