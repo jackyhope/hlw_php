@@ -1,7 +1,7 @@
 <?php
 
 require __DIR__ . '/apicore/Class/Loader.class.php';
-define('ENV', 'online');
+define('ENV_PATH', 'online');
 
 final class ApiCore 
 {
@@ -17,7 +17,7 @@ final class ApiCore
     public static function init($app_path, $sdk_lib = array('hlwApiSdk'))
     {
         
-        self::$loader = new Class_Loader(ENV);
+        self::$loader = new Class_Loader(ENV_PATH);
         self::$loader->appendPath('app', $app_path);
         self::$loader->appendSdk($sdk_lib);
         self::$loader->registerLoader();
