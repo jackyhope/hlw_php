@@ -16,17 +16,29 @@ class Class_Loader
     private $sdkPath = array();
     private $pathCRC = array();
 
-    public function __construct()
+    public function __construct($env)
     {
-        $this->rootPath = realpath(__DIR__ . '/../../../');
+        if ($env !== 'online') {
+            $this->rootPath = realpath(__DIR__ . '/../../../');
+            
+            $this->appendPath('hlw', array($this->rootPath . '/hlw_phpframe/hlwcore'));
 
-        $this->appendPath('hlw', array($this->rootPath . '/hlw_phpframe/hlwcore'));
+            $this->appendPath('plugin', array($this->rootPath . '/hlw_phpframe/plugins'));
 
-        $this->appendPath('plugin', array($this->rootPath . '/hlw_phpframe/plugins'));
+            $this->appendPath('core', array($this->rootPath . '/hlw_php/apicore'));
 
-        $this->appendPath('core', array($this->rootPath . '/hlw_php/apicore'));
+            $this->appendPath('thrift', array($this->rootPath . '/hlw_php/lib'));
+        } else {
+            $this->rootPath = '/home/wwwroot/';
 
-        $this->appendPath('thrift', array($this->rootPath . '/hlw_php/lib'));
+            $this->appendPath('hlw', array(realpath($this->rootPath . '/hlw_phpframe') . '/hlwcore'));
+
+            $this->appendPath('plugin', array(realpath($this->rootPath . '/hlw_phpframe') . '/plugins'));
+
+            $this->appendPath('core', array(realpath($this->rootPath . '/hlw_php') . '/apicore'));
+
+            $this->appendPath('thrift', array(realpath($this->rootPath . '/hlw_php') . '/lib'));
+        }
     }
 
     public function appendPath($target, $path)
