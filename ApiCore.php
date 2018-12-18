@@ -1,7 +1,7 @@
 <?php
 
 require __DIR__ . '/apicore/Class/Loader.class.php';
-define('ENV_PATH', 'local');
+define('ENV_PATH', 'online');
 
 final class ApiCore 
 {
