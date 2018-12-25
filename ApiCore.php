@@ -31,7 +31,7 @@ final class ApiCore
         $error->registerHandler();
 
         try {
-            $source = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
+            $source = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : $_SERVER['REQUEST_URI'];
             $header = $ctx->getHeader();
             $mapper = new Api_Mapper($source);
             $handler = $mapper->getHandler();
